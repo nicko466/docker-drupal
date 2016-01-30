@@ -718,8 +718,15 @@ function aggregator_category_load($cid) {
  * @ingroup themeable
  */
 function theme_aggregator_block_item($variables) {
+
   // Display the external link to the item.
-  return '<a href="' . check_url($variables['item']->link) . '">' . check_plain($variables['item']->title) . "</a>\n";
+  $meincontent = $variables['item']->description;
+
+  preg_match("#(<img[^>]+?>)#i", $meincontent, $result);
+  list(, $img_tag) = $result;
+
+  return '<a href="' . check_url($variables['item']->link) . '">' . $img_tag . "</a>\n" . '<a href="' . check_url($variables['item']->link) . '">' . check_plain($variables['item']->title) . "</a>\n";
+
 }
 
 /**
