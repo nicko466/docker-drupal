@@ -2,8 +2,8 @@
 #
 # VERSION       1
 # DOCKER-VERSION        1
-FROM    debian:wheezy
-MAINTAINER Ricardo Amaro <mail_at_ricardoamaro.com>
+FROM    debian:jessie
+MAINTAINER nicko466
 
 #RUN echo "deb http://archive.ubuntu.com/ubuntu saucy main restricted universe multiverse" > /etc/apt/sources.list
 RUN apt-get update
